@@ -1,20 +1,5 @@
-class MoviesController < ApplicationController
-  def index
-    @movies = Movie.page params[:page]
-  end
-
-  def show
-    @movie = Movie.find params[:id]
-
-    respond_to do |format|
-      format.html
-      format.json { render json: @movie }
-    end
-  end
-
-  def edit
-    @movie = Movie.find params[:id]
-  end
+class MoviesController < InheritedResources::Base
+  respond_to :html, :xml, :json
 
   def update
     @movie = Movie.find params[:id]
@@ -26,4 +11,9 @@ class MoviesController < ApplicationController
     end
   end
 
+protected
+
+  def collection
+    @movies ||= end_of_association_chain.page(params[:page])
+  end
 end
