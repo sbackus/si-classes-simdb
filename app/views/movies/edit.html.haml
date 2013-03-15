@@ -1,0 +1,18 @@
+%h1 Editing #{@movie.title}
+
+= form_for @movie do |f|
+  = f.label :title
+  = f.text_field :title
+  = f.label :description
+  = f.text_area :description
+  = f.label :released_on
+  = f.date_select :released_on
+  = f.label :poster_url
+  = f.text_field :poster_url
+  = f.label :tagline
+  = f.text_field :tagline
+  = f.label :tmdb_id
+  = f.text_field :tmdb_id
+  = f.label :imdb_id
+  = f.text_field :imdb_id
+  = f.submit
