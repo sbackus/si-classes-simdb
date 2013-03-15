@@ -1,0 +1,16 @@
+%h1 Movies
+
+%table.table.table-striped
+  %thead
+    %tr
+      %th Title
+      %th Released
+      %th Tagline
+      %th Actions
+  %tbody
+    - @movies.each do |movie|
+      %tr
+        %td= link_to movie.title, movie_path(movie)
+        %td= movie.released_on
+        %td= movie.tagline
+        %td= link_to 'Edit', edit_movie_path(movie)
