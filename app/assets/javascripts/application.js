@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require twitter/bootstrap
+//= require pickadate.min
 //= require jquery.nano
 //= require_tree .
 

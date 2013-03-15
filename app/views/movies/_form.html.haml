@@ -1,7 +1,7 @@
 = simple_form_for @movie do |f|
   = f.input :title
   = f.input :description
-  = f.input :released_on
+  = f.input :released_on, as: :string, input_html: { class: 'datepicker' }
   = f.input :poster_url
   = f.input :tagline
   = f.input :tmdb_id
