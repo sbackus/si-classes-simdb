@@ -8,6 +8,5 @@
       %th Tagline
       %th Actions
   %tbody
-    - @movies.each do |movie|
-      = render movie, :template => 'movies/movie'
+    = render @movies
 
