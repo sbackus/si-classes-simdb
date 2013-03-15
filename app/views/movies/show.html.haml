@@ -1,4 +1,8 @@
-%h1= @movie.title
+%h1
+  = @movie.title
+  = link_to edit_movie_path(@movie), :class => 'btn' do
+    %i.icon-edit
+
 %h3= @movie.tagline
 
 .movie-data
