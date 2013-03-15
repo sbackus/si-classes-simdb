@@ -23,4 +23,17 @@ class MoviesControllerTest < ActionController::TestCase
 
     assert_equal 0, movies.count
   end
+
+  test "update with valid movie" do
+    new_title = "James Bond: From GitHub with Love"
+    movie = Movie.create( :title => "James Bond: Octocat", :released_on => 2.days.ago, :tagline => "DRY with a vengeance!" )
+
+    post :update, id: movie.id, movie: { :title => new_title }
+
+    assert_redirected_to movie_path(movie)
+    
+    movie.reload
+    assert_equal new_title, movie.title
+    assert_equal "Updated #{new_title}", flash[:success]
+  end
 end
