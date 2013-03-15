@@ -28,7 +28,7 @@ $(function() {
                 link.popover('show');
             });
         },
-        function() { 
+        function() {
             $(this).popover('hide');
         }
     );
