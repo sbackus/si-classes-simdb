@@ -1,5 +1,5 @@
 %tr
-  %td= link_to movie.title, movie_path(movie)
+  %td= link_to movie.title, movie_path(movie), :class => 'preview', :data => { :id => movie.id }
   %td= movie.released_on
   %td= movie.tagline
   %td= link_to 'Edit', edit_movie_path(movie)

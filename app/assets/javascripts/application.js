@@ -14,3 +14,20 @@
 //= require jquery_ujs
 //= require twitter/bootstrap
 //= require_tree .
+
+$(function() {
+    $(".preview-table a.preview").hover(
+        function() {
+            var link = $(this);
+            var id = link.data("id");
+            
+            $("#movie-data-container").load('/movies/' + id + ' .movie-data', function() {
+                link.popover({ content: $('#movie-data-container').html(), html: true });
+                link.popover('show');
+            });
+        },
+        function() { 
+            $(this).popover('hide');
+        }
+    );
+});

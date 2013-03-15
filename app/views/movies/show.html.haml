@@ -1,14 +1,14 @@
 %h1= @movie.title
 %h3= @movie.tagline
 
-%dl
-  %dt Release Date
-  %dd= @movie.released_on
-  %dt The Movie Database ID
-  %dd= @movie.tmdb_id
-  %dt Internet Movie Database ID
-  %dd= @movie.imdb_id
+.movie-data
+  %dl
+    %dt Release Date
+    %dd= @movie.released_on
+    %dt The Movie Database ID
+    %dd= @movie.tmdb_id
+    %dt Internet Movie Database ID
+    %dd= @movie.imdb_id
 
-%p= @movie.description
-
-= image_tag @movie.poster_url
+  %p= @movie.description
+  = image_tag @movie.poster_url

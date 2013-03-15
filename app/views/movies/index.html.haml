@@ -7,7 +7,9 @@
       %th Released
       %th Tagline
       %th Actions
-  %tbody
+  %tbody.preview-table
     = render @movies
+
+#movie-data-container
 
 = paginate @movies
