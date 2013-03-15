@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require twitter/bootstrap
+//= require jquery.nano
 //= require_tree .
 
 $(function() {
@@ -20,9 +21,10 @@ $(function() {
         function() {
             var link = $(this);
             var id = link.data("id");
-            
-            $("#movie-data-container").load('/movies/' + id + ' .movie-data', function() {
-                link.popover({ content: $('#movie-data-container').html(), html: true });
+            var template = $('#movie-window-template').html();
+
+            $.get('/movies/' + id + '.json', function(data) {
+                link.popover({ content: jQuery.fn.nano( template, data ), html: true });
                 link.popover('show');
             });
         },

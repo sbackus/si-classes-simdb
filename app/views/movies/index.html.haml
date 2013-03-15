@@ -10,6 +10,9 @@
   %tbody.preview-table
     = render @movies
 
-#movie-data-container
+#movie-window-template
+  .movie-info
+    %h1 {title}
+    %img{:src => '{poster_url}'}
 
 = paginate @movies
